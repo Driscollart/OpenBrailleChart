@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Braille Chart</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
+
+</head>
+
+<body>
+
+    <h3>Braille Letters</h3>
+    <div style="display: flex; flex-wrap: wrap;" data-bind="foreach: alphabet">
+        <div class="chart-item">
+            <div class="glyph-container">
+                <div class="glyph-row">
+                    <div class="glyph-cell">
+                        <span data-bind="text: $root.getCell(cell1)">&#8226;</span>
+                    </div>
+                    <div class="glyph-cell">
+                        <span data-bind="text: $root.getCell(cell2)">&#8226;</span>
+                    </div>
+                    <div class="glyph-cell">
+                        <span data-bind="text: $root.getCell(cell3)">&#8226;</span>
+                    </div>
+
+                </div>
+                <div class="glyph-row">
+                    <div class="glyph-cell">
+                        <span data-bind="text: $root.getCell(cell4)">&#8226;</span>
+                    </div>
+                    <div class="glyph-cell">
+                        <span data-bind="text: $root.getCell(cell5)">&#8226;</span>
+                    </div>
+                    <div class="glyph-cell">
+                        <span data-bind="text: $root.getCell(cell6)">&#8226;</span>
+                    </div>
+                </div>
+            </div>
+            <div class="chart-detail-item">
+
+                <div class="upper-case letter-header" data-bind="text: letter"></div>
+                <div style="width: 150px;" data-bind="text: $root.getNumbers($index(), 'alphabet')"></div>
+            </div>
+        </div>
+    </div>
+    <div class="pagebreak"> </div>
+    <h3>Braille Numbers</h3>
+    <div style="display: flex; flex-wrap: wrap;" data-bind="foreach: numbers">
+        <div class="chart-item">
+            <div class="glyph-container">
+                <div class="glyph-row">
+                    <div class="glyph-cell">
+                        <span data-bind="text: $root.getCell(cell1)">&#8226;</span>
+                    </div>
+                    <div class="glyph-cell">
+                        <span data-bind="text: $root.getCell(cell2)">&#8226;</span>
+                    </div>
+                    <div class="glyph-cell">
+                        <span data-bind="text: $root.getCell(cell3)">&#8226;</span>
+                    </div>
+
+                </div>
+                <div class="glyph-row">
+                    <div class="glyph-cell">
+                        <span data-bind="text: $root.getCell(cell4)">&#8226;</span>
+                    </div>
+                    <div class="glyph-cell">
+                        <span data-bind="text: $root.getCell(cell5)">&#8226;</span>
+                    </div>
+                    <div class="glyph-cell">
+                        <span data-bind="text: $root.getCell(cell6)">&#8226;</span>
+                    </div>
+                </div>
+            </div>
+            <div class="chart-detail-item">
+
+                <div style="white-space: nowrap;" class="letter-header" data-bind="text: letter"></div>
+                <div style="width: 150px;" data-bind="text: $root.getNumbers($index(), 'numbers')"></div>
+            </div>
+        </div>
+    </div>
+    
+    <h3>Braille Punctuation</h3>
+    <div style="display: flex; flex-wrap: wrap;" data-bind="foreach: punctuation">
+        <div class="chart-item">
+            <div class="glyph-container">
+                <div class="glyph-row">
+                    <div class="glyph-cell">
+                        <span data-bind="text: $root.getCell(cell1)">&#8226;</span>
+                    </div>
+                    <div class="glyph-cell">
+                        <span data-bind="text: $root.getCell(cell2)">&#8226;</span>
+                    </div>
+                    <div class="glyph-cell">
+                        <span data-bind="text: $root.getCell(cell3)">&#8226;</span>
+                    </div>
+
+                </div>
+                <div class="glyph-row">
+                    <div class="glyph-cell">
+                        <span data-bind="text: $root.getCell(cell4)">&#8226;</span>
+                    </div>
+                    <div class="glyph-cell">
+                        <span data-bind="text: $root.getCell(cell5)">&#8226;</span>
+                    </div>
+                    <div class="glyph-cell">
+                        <span data-bind="text: $root.getCell(cell6)">&#8226;</span>
+                    </div>
+                </div>
+            </div>
+            <div class="chart-detail-item">
+
+                <div style="white-space: nowrap;" class="letter-header" data-bind="text: letter"></div>
+                <div style="width: 150px;" data-bind="text: $root.getNumbers($index(), 'punctuation')"></div>
+            </div>
+        </div>
+    </div>
+    <div class="no-print">
+        <a href="braille_chart.png" target="_blank">Download PNG Image</a><br>
+        <a href="#" onclick="window.print();">Print Page</a>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
